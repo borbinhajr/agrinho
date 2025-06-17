@@ -1,64 +1,88 @@
 body {
-  background-color: #b2d1b3;
-  font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0; /* Light background for the overall page */
 }
 
 .container {
-  max-width: 1200px;
-  margin: 20px auto;
-  padding: 20px;
-}
-
-.container h1 {
-  color: #fff;
-  text-align: center;
-  font-size: 2.5em;
-}
-
-.content {
+  width: 850px; /* Approximate width based on the image */
+  background-color: #034C0B; /* Slightly off-white background for the main content area */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  flex-direction: column;
+  overflow: hidden; /* To contain floated elements if any */
 }
 
-.left-section {
- 
-  border-radius: 50%;
+header {
+  background-color: #829255; /* Light Green, similar to the top bar in the image */
+  color: #247424;
+  padding: 15px 0;
+  text-align: center;
+  font-size: 1.5em; /* Adjust as needed */
+  font-weight: bold;
+}
+
+main {
+  display: flex;
   padding: 20px;
-  text-align: justify;
-  flex: 1;
-  margin-right: 20px;
 }
 
-.left-section p {
-  margin-bottom: 15px;
+.left-column {
+  background-color: #218f21; /* Lime Green, similar to the left column */
+  color: white;
+  padding: 20px;
+  width: 40%; /* Adjust width as needed */
+  box-sizing: border-box; /* Include padding in width */
+  margin-right: 20px; /* Space between columns */
+  line-height: 1.6;
 }
 
-.right-section {
-  flex: 1;
-  position: relative;
+.right-column {
+  width: 60%; /* Adjust width as needed */
+  box-sizing: border-box; /* Include padding in width */
+  line-height: 1.6;
+  color: #cdd8cf; /* Darker text for readability */
 }
 
-.image-container {
-  position: relative;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-  overflow: hidden;
+.image-placeholder {
+  width:100%;
+  height: 250px; /* Approximate height of the image in the design */
+  background-color: #034C0B; /* Placeholder background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  overflow: hidden; /* Ensure image fits */
 }
 
-.image-container img {
-  width: 100%;
+.image-placeholder img {
+  max-width: 100%;
   height: auto;
   display: block;
 }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
- 
+h1 {
+  margin: 0;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+/* Basic Responsive adjustments (optional, but good practice) */
+@media (max-width: 768px) {
+  main {
+      flex-direction: column;
+  }
+
+  .left-column,
+  .right-column {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 20px;
+  }
 }
