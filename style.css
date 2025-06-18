@@ -1,88 +1,266 @@
+/* Geral */
 body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
   margin: 0;
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-color: #f0f0f0; /* Light background for the overall page */
+  padding: 0;
+  background-color: #f0f2f5; /* Um cinza mais suave */
+  color: #333;
 }
 
 .container {
-  width: 850px; /* Approximate width based on the image */
-  background-color: #034C0B; /* Slightly off-white background for the main content area */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(76, 153, 13, 0.1);
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
   display: flex;
-  flex-direction: column;
-  overflow: hidden; /* To contain floated elements if any */
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-header {
-  background-color: #829255; /* Light Green, similar to the top bar in the image */
-  color: #247424;
-  padding: 15px 0;
+/* Cabeçalho */
+.header {
+  background-color: #2e8b57; /* Verde da lavoura */
+  color: #fff;
+  padding: 30px 0;
   text-align: center;
-  font-size: 1.5em; /* Adjust as needed */
-  font-weight: bold;
+  border-bottom: 8px solid #1e7040; /* Borda mais grossa para destaque */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-main {
-  display: flex;
+.header h1 {
+  margin: 0;
+  font-size: 3.2em; /* Título maior */
+  font-family: 'Merriweather', serif;
+  letter-spacing: -1px; /* Espaçamento para efeito jornalístico */
+}
+
+.header .subtitle {
+  font-size: 1.4em;
+  margin-top: 15px;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+.news-info {
+  font-size: 0.9em;
+  margin-top: 20px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.news-info span {
+  margin: 0 10px;
+  padding: 3px 8px;
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 3px;
+}
+
+/* Barra Lateral (Sidebar) */
+.sidebar {
+  flex: 1;
+  min-width: 280px; /* Um pouco mais larga */
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  align-self: flex-start;
+  border-left: 5px solid #a8d5ba; /* Detalhe lateral */
+}
+
+.sidebar-box {
+  margin-bottom: 35px;
+  border-bottom: 1px dashed #ddd; /* Linha tracejada */
+  padding-bottom: 25px;
+}
+
+.sidebar-box:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.sidebar-box h2 {
+  color: #1e7040; /* Verde mais escuro para títulos da sidebar */
+  font-size: 1.6em;
+  margin-top: 0;
+  border-bottom: 3px solid #b3e0c7; /* Borda mais suave */
+  padding-bottom: 12px;
+  margin-bottom: 18px;
+  font-family: 'Merriweather', serif;
+}
+
+.sidebar-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-box ul li {
+  margin-bottom: 12px;
+}
+
+.sidebar-box ul li a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 500; /* Um pouco mais de peso */
+  transition: color 0.3s ease, padding-left 0.3s ease;
+  display: block;
+  padding-left: 0;
+}
+
+.sidebar-box ul li a:hover {
+  color: #2e8b57;
+  padding-left: 10px; /* Efeito de destaque ao passar o mouse */
+}
+
+.sidebar-box p {
+  font-size: 1em;
+  color: #555;
+  text-align: justify;
+}
+
+/* Conteúdo Principal */
+.main-content {
+  flex: 3;
+  min-width: 650px;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-right: 5px solid #a8d5ba; /* Detalhe lateral */
+}
+
+.article-section {
+  margin-bottom: 50px;
+}
+
+.article-section h2 {
+  color: #2e8b57;
+  font-size: 2.4em; /* Títulos dos artigos maiores */
+  margin-top: 0;
+  border-bottom: 3px solid #e0e0e0;
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+  font-family: 'Merriweather', serif;
+  line-height: 1.2;
+}
+
+.article-section p {
+  margin-bottom: 18px;
+  text-align: justify;
+  font-size: 1.05em;
+  color: #444;
+}
+
+/* Imagem do Artigo */
+.article-image {
+  text-align: center;
+  margin: 40px 0;
+  background-color: #fafafa;
   padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+  border: 1px solid #eee;
 }
 
-.left-column {
-  background-color: #218f21; /* Lime Green, similar to the left column */
-  color: white;
-  padding: 20px;
-  width: 40%; /* Adjust width as needed */
-  box-sizing: border-box; /* Include padding in width */
-  margin-right: 20px; /* Space between columns */
-  line-height: 1.6;
-}
-
-.right-column {
-  width: 60%; /* Adjust width as needed */
-  box-sizing: border-box; /* Include padding in width */
-  line-height: 1.6;
-  color: #cdd8cf; /* Darker text for readability */
-}
-
-.image-placeholder {
-  width:100%;
-  height: 250px; /* Approximate height of the image in the design */
-  background-color: #034C0B; /* Placeholder background */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
-  overflow: hidden; /* Ensure image fits */
-}
-
-.image-placeholder img {
+.article-image img {
   max-width: 100%;
   height: auto;
-  display: block;
+  border-radius: 5px;
+  border: 1px solid #ddd;
 }
 
-h1 {
-  margin: 0;
+.article-image figcaption {
+  margin-top: 15px;
+  font-style: italic;
+  color: #666;
+  font-size: 0.95em;
+  line-height: 1.4;
 }
 
-p {
-  margin-bottom: 1em;
+/* Rodapé */
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 25px 0;
+  margin-top: 50px;
+  font-size: 0.95em;
+  border-top: 5px solid #1e7040;
 }
 
-/* Basic Responsive adjustments (optional, but good practice) */
-@media (max-width: 768px) {
-  main {
+.footer p {
+  margin: 5px 0;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .main-content {
+      min-width: unset;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
       flex-direction: column;
   }
 
-  .left-column,
-  .right-column {
+  .sidebar, .main-content {
+      min-width: unset;
       width: 100%;
-      margin-right: 0;
-      margin-bottom: 20px;
+      border-left: none; /* Remove bordas laterais em mobile */
+      border-right: none;
+  }
+
+  .header h1 {
+      font-size: 2.5em;
+  }
+  .header .subtitle {
+      font-size: 1.1em;
+  }
+  .article-section h2 {
+      font-size: 2em;
+  }
+  .main-content {
+      padding: 25px;
+  }
+  .sidebar {
+      padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header h1 {
+      font-size: 2em;
+  }
+  .header .subtitle {
+      font-size: 0.9em;
+  }
+  .news-info {
+      font-size: 0.8em;
+  }
+  .article-section h2 {
+      font-size: 1.8em;
+  }
+  .article-section p {
+      font-size: 1em;
+  }
+  .sidebar-box h2 {
+      font-size: 1.4em;
+  }
+  .main-content, .sidebar {
+      padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+      font-size: 1.6em;
+  }
+  .header .subtitle {
+      font-size: 0.8em;
+  }
+  .news-info span {
+      display: block;
+      margin: 5px auto;
+      width: fit-content;
   }
 }
